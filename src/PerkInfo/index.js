@@ -144,7 +144,16 @@ const CardsBlock = props => {
 const Weapon = props => <Box sx = {{flexGrow: 1}}>
     <CardsBlock filter = {props.name + " attribute"} title = "Attribute" perks = {nw}/>
     <CardsBlock filter = {props.name + " socket"} title = "Slot" perks = {nw} />
-    <CardsBlock filter = {props.name + " exclusive"} title = "Exclusive" perks = {nw} />
+    <CardsBlock 
+        filter = {props.name + " exclusive"} 
+        title = {(
+            name => {
+                let e = EXCLUSIVE_LIST.find(ex => ex.name === name)
+                return e ? e.title : ""
+            }
+        )(`${props.name} exclusive`)}
+        perks = {nw} 
+    />
     <CardsBlock filter = {props.name} title = "Perk" perks = {nw} />
 </Box>
 
@@ -152,7 +161,7 @@ const Shield = props => <Box sx = {{flexGrow: 1}}>
     <CardsBlock filter = {props.name + " attribute"} title = "Attribute" perks = {nw} />
     <CardsBlock filter = {props.name + " socket"} title = "Slot" perks = {nw} />
     <CardsBlock filter = {props.name + " exclusive"} title = "Exclusive" perks = {nw} />
-    <CardsBlock filter = {props.name} title = "Perk" perks = {nw} />
+    <CardsBlock filter = {props.name} title = "Perks" perks = {nw} />
 </Box>
 
 const Armor = props => <Box sx = {{flexGrow: 1}}>
@@ -161,7 +170,7 @@ const Armor = props => <Box sx = {{flexGrow: 1}}>
     {EXCLUSIVE_LIST.map((item, index) => <CardsBlock filter = {item.name} title = {item.title} perks = {nw} key = {index} />)}
     {(() => {
         let data = nw.filter(perk => !perk.target.find(target => EXCLUSIVE_LIST.find(exclusive => exclusive.name === target)))
-        return <CardsBlock filter = {props.name} title = "Perk" perks = {data} />
+        return <CardsBlock filter = {props.name} title = "Perks" perks = {data} />
     })()}
 </Box>
 
@@ -172,11 +181,11 @@ const Jewelry = props => <Box sx = {{flexGrow: 1}}>
 </Box>
 
 const Tool = props => <Box sx = {{flexGrow: 1}}>
-    <CardsBlock filter = {props.name} title = "Perk" perks = {nw} />
+    <CardsBlock filter = {props.name} title = "Perks" perks = {nw} />
 </Box>
 
 const Satchel = props => <Box sx = {{flexGrow: 1}}>
-    <CardsBlock filter = {props.name} title = "Perk" perks = {nw} />
+    <CardsBlock filter = {props.name} title = "Perks" perks = {nw} />
 </Box>
 
 class PerkInfo extends Component {

@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/nw-ingot-price-calculator/static/css/main.e6c13ad2.css",
+    "main.js": "/nw-ingot-price-calculator/static/js/main.1ed8c82e.js",
+    "static/js/787.184a10dd.chunk.js": "/nw-ingot-price-calculator/static/js/787.184a10dd.chunk.js",
+    "index.html": "/nw-ingot-price-calculator/index.html",
+    "main.e6c13ad2.css.map": "/nw-ingot-price-calculator/static/css/main.e6c13ad2.css.map",
+    "main.1ed8c82e.js.map": "/nw-ingot-price-calculator/static/js/main.1ed8c82e.js.map",
+    "787.184a10dd.chunk.js.map": "/nw-ingot-price-calculator/static/js/787.184a10dd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.1ed8c82e.js"
+  ]
+}

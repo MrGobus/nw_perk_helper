@@ -87,8 +87,6 @@ const CardsBlock = props => {
 
     let perks = props.perks.filter(perk => perk.target.includes(props.filter))
 
-    console.log(process.env)
-
     return perks.length ? 
         <Fragment>
 

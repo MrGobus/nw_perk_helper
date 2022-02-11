@@ -79,13 +79,15 @@ const SATCHEL = [
     "satchel"
 ]
 
-    /*
-        <CardsBlock filter = "" title = "" perks = {perks} />
-    */
+/*
+    <CardsBlock filter = "" title = "" perks = {perks} />
+*/
 
 const CardsBlock = props => {
 
     let perks = props.perks.filter(perk => perk.target.includes(props.filter))
+
+    console.log(process.env)
 
     return perks.length ? 
         <Fragment>
@@ -101,7 +103,7 @@ const CardsBlock = props => {
                         <Card> 
                             <CardHeader 
                                 avatar = {<Avatar 
-                                    src = {perk.image}
+                                    src = {process.env.PUBLIC_URL + "/" + perk.image}
                                     sx = {{ 
                                         bgcolor: "#333", 
                                         p: 1,
@@ -118,8 +120,8 @@ const CardsBlock = props => {
                                 }
                             />
                             <CardContent>
-                                {perk.description.map((element, index) => <Typography variant = "subtitle1" component = "div" color = "text.secondary" key = {index}>
-                                    {element}
+                                {perk.description.map((description, index) => <Typography variant = "subtitle1" component = "div" color = "text.secondary" key = {index}>
+                                    {description}
                                 </Typography>)}
                                 <Divider sx = {{mt: 1, mb: 1}} />
                                 <Typography 

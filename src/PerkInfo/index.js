@@ -79,136 +79,136 @@ const SATCHEL = [
     "satchel"
 ]
 
+    /*
+        <CardsBlock filter = "" title = "" perks = {perks} />
+    */
+
+const CardsBlock = props => {
+
+    let perks = props.perks.filter(perk => perk.target.includes(props.filter))
+
+    return perks.length ? 
+        <Fragment>
+
+            <Typography variant="h3" component="div" sx = {{ mb: 2, mt: 2}}>
+                {props.title}
+            </Typography>
+
+            <Grid container spacing={2}>
+
+                {perks.map((perk, index) => 
+                    <Grid item xs = {12} sm = {6} md = {4} key = {index}>
+                        <Card> 
+                            <CardHeader 
+                                avatar = {<Avatar 
+                                    src = {perk.image}
+                                    sx = {{ 
+                                        bgcolor: "#333", 
+                                        p: 1,
+                                        width: 50,
+                                        height: 50,
+                                    }}
+                                    variant = "square"
+                                >
+                                </Avatar>}
+                                title = {
+                                    <Typography variant = "h5" component = "div">
+                                        {perk.name}
+                                    </Typography>
+                                }
+                            />
+                            <CardContent>
+                                {perk.description.map((element, index) => <Typography variant = "subtitle1" component = "div" color = "text.secondary" key = {index}>
+                                    {element}
+                                </Typography>)}
+                                <Divider sx = {{mt: 1, mb: 1}} />
+                                <Typography 
+                                    variant = "subtitle2" 
+                                    component = "div" 
+                                    color = "text.secondary"
+                                >
+                                    Resource: {perk.resource}
+                                </Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                )}
+
+            </Grid>
+
+        </Fragment> 
+    : 
+        ""
+}
+
+const Weapon = props => <Box sx = {{flexGrow: 1}}>
+    <CardsBlock filter = {props.name + " attribute"} title = "Attribute" perks = {nw}/>
+    <CardsBlock filter = {props.name + " socket"} title = "Slot" perks = {nw} />
+    <CardsBlock filter = {props.name + " exclusive"} title = "Exclusive" perks = {nw} />
+    <CardsBlock filter = {props.name} title = "Perk" perks = {nw} />
+</Box>
+
+const Shield = props => <Box sx = {{flexGrow: 1}}>
+    <CardsBlock filter = {props.name + " attribute"} title = "Attribute" perks = {nw} />
+    <CardsBlock filter = {props.name + " socket"} title = "Slot" perks = {nw} />
+    <CardsBlock filter = {props.name + " exclusive"} title = "Exclusive" perks = {nw} />
+    <CardsBlock filter = {props.name} title = "Perk" perks = {nw} />
+</Box>
+
+const Armor = props => <Box sx = {{flexGrow: 1}}>
+    <CardsBlock filter = {props.name + " attribute"} title = "Attribute" perks = {nw} />
+    <CardsBlock filter = {props.name + " socket"} title = "Slot" perks = {nw} />
+    {EXCLUSIVE_LIST.map((item, index) => <CardsBlock filter = {item.name} title = {item.title} perks = {nw} key = {index} />)}
+    {(() => {
+        let data = nw.filter(perk => !perk.target.find(target => EXCLUSIVE_LIST.find(exclusive => exclusive.name === target)))
+        return <CardsBlock filter = {props.name} title = "Perk" perks = {data} />
+    })()}
+</Box>
+
+const Jewelry = props => <Box sx = {{flexGrow: 1}}>
+    <CardsBlock filter = {props.name + " attribute"} title = "Attribute" perks = {nw} />
+    <CardsBlock filter = {props.name + " socket"} title = "Slot" perks = {nw} />
+    <CardsBlock filter = {props.name} title = "Perk" perks = {nw} />
+</Box>
+
+const Tool = props => <Box sx = {{flexGrow: 1}}>
+    <CardsBlock filter = {props.name} title = "Perk" perks = {nw} />
+</Box>
+
+const Satchel = props => <Box sx = {{flexGrow: 1}}>
+    <CardsBlock filter = {props.name} title = "Perk" perks = {nw} />
+</Box>
+
 class PerkInfo extends Component {
 
     constructor(props) {
         super(props)
     }
 
-    /*
-        <this.CardsBlock filter = "" title = "" perks = {perks} />
-    */
-
-    CardsBlock = props => {
-
-        let perks = props.perks.filter(perk => perk.target.includes(props.filter))
-
-        return perks.length ? 
-            <Fragment>
-
-                <Typography variant="h3" component="div" sx = {{ mb: 2, mt: 2}}>
-                    {props.title}
-                </Typography>
-
-                <Grid container spacing={2}>
-
-                    {perks.map((perk, index) => 
-                        <Grid item xs = {12} sm = {6} md = {4} key = {index}>
-                            <Card> 
-                                <CardHeader 
-                                    avatar = {<Avatar 
-                                        src = {perk.image}
-                                        sx = {{ 
-                                            bgcolor: "#333", 
-                                            p: 1,
-                                            width: 50,
-                                            height: 50,
-                                        }}
-                                        variant = "square"
-                                    >
-                                    </Avatar>}
-                                    title = {
-                                        <Typography variant = "h5" component = "div">
-                                            {perk.name}
-                                        </Typography>
-                                    }
-                                />
-                                <CardContent>
-                                    {perk.description.map((element, index) => <Typography variant = "subtitle1" component = "div" color = "text.secondary" key = {index}>
-                                        {element}
-                                    </Typography>)}
-                                    <Divider sx = {{mt: 1, mb: 1}} />
-                                    <Typography 
-                                        variant = "subtitle2" 
-                                        component = "div" 
-                                        color = "text.secondary"
-                                    >
-                                        Resource: {perk.resource}
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                    )}
-
-                </Grid>
-
-            </Fragment> 
-        : 
-            ""
-    }
-
-    Weapon = props => <Box sx = {{flexGrow: 1}}>
-        <this.CardsBlock filter = {props.name + " attribute"} title = "Attribute" perks = {nw}/>
-        <this.CardsBlock filter = {props.name + " socket"} title = "Slot" perks = {nw} />
-        <this.CardsBlock filter = {props.name + " exclusive"} title = "Exclusive" perks = {nw} />
-        <this.CardsBlock filter = {props.name} title = "Perk" perks = {nw} />
-    </Box>
-
-    Shield = props => <Box sx = {{flexGrow: 1}}>
-        <this.CardsBlock filter = {props.name + " attribute"} title = "Attribute" perks = {nw} />
-        <this.CardsBlock filter = {props.name + " socket"} title = "Slot" perks = {nw} />
-        <this.CardsBlock filter = {props.name + " exclusive"} title = "Exclusive" perks = {nw} />
-        <this.CardsBlock filter = {props.name} title = "Perk" perks = {nw} />
-    </Box>
-
-    Armor = props => <Box sx = {{flexGrow: 1}}>
-        <this.CardsBlock filter = {props.name + " attribute"} title = "Attribute" perks = {nw} />
-        <this.CardsBlock filter = {props.name + " socket"} title = "Slot" perks = {nw} />
-        {EXCLUSIVE_LIST.map((item, index) => <this.CardsBlock filter = {item.name} title = {item.title} perks = {nw} key = {index} />)}
-        {(() => {
-            let data = nw.filter(perk => !perk.target.find(target => EXCLUSIVE_LIST.find(exclusive => exclusive.name === target)))
-            return <this.CardsBlock filter = {props.name} title = "Perk" perks = {data} />
-        })()}
-    </Box>
-
-    Jewelry = props => <Box sx = {{flexGrow: 1}}>
-        <this.CardsBlock filter = {props.name + " attribute"} title = "Attribute" perks = {nw} />
-        <this.CardsBlock filter = {props.name + " socket"} title = "Slot" perks = {nw} />
-        <this.CardsBlock filter = {props.name} title = "Perk" perks = {nw} />
-    </Box>
-
-    Tool = props => <Box sx = {{flexGrow: 1}}>
-        <this.CardsBlock filter = {props.name} title = "Perk" perks = {nw} />
-    </Box>
-
-    Satchel = props => <Box sx = {{flexGrow: 1}}>
-        <this.CardsBlock filter = {props.name} title = "Perk" perks = {nw} />
-    </Box>
-
     render = () => {
 
         if (WEAPONS.includes(this.props.item)) {
-            return <this.Weapon name = {this.props.item} />
+            return <Weapon name = {this.props.item} />
         }
 
         if (SHIELDS.includes(this.props.item)) {
-            return <this.Shield name = {this.props.item} />
+            return <Shield name = {this.props.item} />
         }
 
         if (ARMOR.includes(this.props.item)) {
-            return <this.Armor name = {this.props.item} />
+            return <Armor name = {this.props.item} />
         }
 
         if (JEWELRY.includes(this.props.item)) {
-            return <this.Jewelry name = {this.props.item} />
+            return <Jewelry name = {this.props.item} />
         }
 
         if (TOOLS.includes(this.props.item)) {
-            return <this.Tool name = {this.props.item} />
+            return <Tool name = {this.props.item} />
         }
 
         if (SATCHEL.includes(this.props.item)) {
-            return <this.Satchel name = {this.props.item} />
+            return <Satchel name = {this.props.item} />
         }
 
         return <Box sx = {{flexGrow: 1}}>

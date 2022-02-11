@@ -160,7 +160,16 @@ const Weapon = props => <Box sx = {{flexGrow: 1}}>
 const Shield = props => <Box sx = {{flexGrow: 1}}>
     <CardsBlock filter = {props.name + " attribute"} title = "Attribute" perks = {nw} />
     <CardsBlock filter = {props.name + " socket"} title = "Slot" perks = {nw} />
-    <CardsBlock filter = {props.name + " exclusive"} title = "Exclusive" perks = {nw} />
+    <CardsBlock 
+        filter = {props.name + " exclusive"} 
+        title = {(
+            name => {
+                let e = EXCLUSIVE_LIST.find(ex => ex.name === name)
+                return e ? e.title : ""
+            }
+        )(`${props.name} exclusive`)}
+        perks = {nw} 
+    />
     <CardsBlock filter = {props.name} title = "Perks" perks = {nw} />
 </Box>
 

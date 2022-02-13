@@ -155,6 +155,7 @@ const Weapon = props => <Box sx = {{flexGrow: 1}}>
         perks = {nw} 
     />
     <CardsBlock filter = {props.name} title = "Perks" perks = {nw} />
+    <CardsBlock filter = {props.name + " mortal"} title = "Perks: mortal" perks = {nw} />
 </Box>
 
 const Shield = props => <Box sx = {{flexGrow: 1}}>

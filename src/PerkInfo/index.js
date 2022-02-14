@@ -195,7 +195,9 @@ const Armor = props => <Box sx = {{flexGrow: 1}}>
         let data = nw.filter(perk => !perk.target.find(target => EXCLUSIVE_LIST.find(exclusive => exclusive.name === target)))
         return <CardsBlock filter = {props.name} title = "Perks" perks = {data} />
     })()}
+    <CardsBlock filter = {props.name + " ward"} title = "Perks: ward" perks = {nw} />
     <CardsBlock filter = {props.name + " conditioning"} title = "Perks: conditioning" perks = {nw} />
+    <CardsBlock filter = {props.name + " expertise"} title = "Perks: expertise" perks = {nw} />
 </Box>
 
 const Jewelry = props => <Box sx = {{flexGrow: 1}}>

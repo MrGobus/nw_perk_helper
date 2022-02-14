@@ -197,6 +197,8 @@ const Armor = props => <Box sx = {{flexGrow: 1}}>
     })()}
     <CardsBlock filter = {props.name + " ward"} title = "Perks: ward" perks = {nw} />
     <CardsBlock filter = {props.name + " conditioning"} title = "Perks: conditioning" perks = {nw} />
+    <CardsBlock filter = {props.name + " gathering"} title = "Perks: gathering" perks = {nw} />
+    <CardsBlock filter = {props.name + " accumulation"} title = "Perks: accumulation" perks = {nw} />
     <CardsBlock filter = {props.name + " expertise"} title = "Perks: expertise" perks = {nw} />
 </Box>
 

@@ -206,6 +206,8 @@ const Jewelry = props => <Box sx = {{flexGrow: 1}}>
     <CardsBlock filter = {props.name + " attribute"} title = "Attribute" perks = {nw} />
     <CardsBlock filter = {props.name + " socket"} title = "Slot" perks = {nw} />
     <CardsBlock filter = {props.name} title = "Perks" perks = {nw} />
+
+    <CardsBlock filter = {props.name + " damage"} title = "Perks: damage" perks = {nw} />
 </Box>
 
 const Tool = props => <Box sx = {{flexGrow: 1}}>

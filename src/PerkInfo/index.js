@@ -177,6 +177,7 @@ const Shield = props => <Box sx = {{flexGrow: 1}}>
         perks = {nw} 
     />
     <CardsBlock filter = {props.name} title = "Perks" perks = {nw} />
+    <CardsBlock filter = {props.name + " ward"} title = "Perks: shield ward" perks = {nw} />
     <CardsBlock filter = {props.name + " race"} title = "Perks: race" perks = {nw} />
     <CardsBlock filter = {props.name + " elemental"} title = "Perks: elemental" perks = {nw} />
     <CardsBlock filter = {props.name + " chain"} title = "Perks: chain" perks = {nw} />

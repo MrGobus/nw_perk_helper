@@ -158,6 +158,7 @@ const Weapon = props => <Box sx = {{flexGrow: 1}}>
     <CardsBlock filter = {props.name + " race"} title = "Perks: race" perks = {nw} />
     <CardsBlock filter = {props.name + " elemental"} title = "Perks: elemental" perks = {nw} />
     <CardsBlock filter = {props.name + " chain"} title = "Perks: chain" perks = {nw} />
+    <CardsBlock filter = {props.name + " crit"} title = "Perks: critical" perks = {nw} />
     <CardsBlock filter = {props.name + " mortal"} title = "Perks: mortal" perks = {nw} />
 </Box>
 

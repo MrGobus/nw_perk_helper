@@ -211,6 +211,7 @@ const Jewelry = props => <Box sx = {{flexGrow: 1}}>
     <CardsBlock filter = {props.name + " longer"} title = "Perks: longer" perks = {nw} />
     <CardsBlock filter = {props.name + " protection"} title = "Perks: protection" perks = {nw} />
     <CardsBlock filter = {props.name + " gathering"} title = "Perks: gathering" perks = {nw} />
+    <CardsBlock filter = {props.name + " mastery"} title = "Perks: mastery" perks = {nw} />
 </Box>
 
 const Tool = props => <Box sx = {{flexGrow: 1}}>

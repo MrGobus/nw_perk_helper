@@ -136,7 +136,7 @@ class App extends React.Component {
                 </Menu>
 
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                    {this.state.selected ? this.state.selected.title : ""}
+                    {this.state.selected ? this.state.selected.title : "<< select item"}
                 </Typography>            
 
             </Toolbar>

@@ -1,5 +1,6 @@
 import {Component, Fragment} from 'react'
 import nw from './nw.json'
+import WeaponInfo from "./WeaponInfo"
 
 import {
     Box,
@@ -142,6 +143,7 @@ const CardsBlock = props => {
 }
 
 const Weapon = props => <Box sx = {{flexGrow: 1}}>
+    <WeaponInfo name = {props.name} />
     <CardsBlock filter = {props.name + " attribute"} title = "Attribute" perks = {nw}/>
     <CardsBlock filter = {props.name + " socket"} title = "Slot" perks = {nw} />
     <CardsBlock 

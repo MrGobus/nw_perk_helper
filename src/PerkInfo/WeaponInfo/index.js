@@ -219,6 +219,25 @@ const perk_info = [
             </p>
         </div>
     },
+    {
+        name: "void gauntlet",
+        body: <div>
+            <Typography variant="h3"component="div" sx = {{ mb: 2, mt: 2}}>
+                Void Gauntlet
+            </Typography>
+            <p>
+                Gauntlet that consumes Mana to debilitate foes and strengthen allies. Specializing in close-range buffs and dealing damage-over-time or mid-range buffs and healing, the Void Gauntlet is particularly dangerous when used in a group.
+            </p>
+            <ul>
+                <li>Light Attacks: Deals 100% Void damage.</li>
+                <li>Heavy Attacks: Deals 125% Void damage and heals self for 20% of the damage done.</li>
+                <li>Harvest Essence (Hold "Block"): Converts your health into mana over time. Rate scales with weapon damage.</li>
+            </ul>
+            <p>
+                <VoidDamageInfo />
+            </p>
+        </div>
+    }    
 ]
 
 const WeaponInfo = props => {

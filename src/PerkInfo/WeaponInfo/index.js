@@ -85,7 +85,27 @@ const perk_info = [
                 <ThrustDamageInfo />
             </p>
         </div>
-    },    
+    },
+    {
+        name: "great axe",
+        body: <div>
+            <Typography variant="h3"component="div" sx = {{ mb: 2, mt: 2}}>
+                Great Axe
+            </Typography>
+            <p>
+                A large melee weapon with wide arcing swings and powerful chopping attacks. Ideal for engaging multiply enemies with AoE damage or dialing extreme to single target.
+            </p>
+            <ul>
+                <li>Light Attack: Deals 100% Slash damage.</li>
+                <li>Heavy Attack: Deals 120% Slash damage.</li>
+                <li>Charged Heavy Attack: Deals 160% Slash damage.</li>
+            </ul>
+            <p>
+                <SlashDamageInfo />
+            </p>
+        </div>
+    },
+    
 ]
 
 const WeaponInfo = props => {

@@ -105,7 +105,25 @@ const perk_info = [
             </p>
         </div>
     },
-    
+    {
+        name: "war hammer",
+        body: <div>
+            <Typography variant="h3"component="div" sx = {{ mb: 2, mt: 2}}>
+                War Hammer
+            </Typography>
+            <p>
+                A mighty combat hammer that can cause the earth to quake with its crushing strikes. Ideal for impeding enemies with ground tremors or dealing crippling blows directly to a target.    
+            </p>
+            <ul>
+                <li>Light Attack: Deals 100% Strike damage.</li>
+                <li>Heavy Attack: Deals 130% Strike damage.</li>
+                <li>Charged Heavy Attack: Deals 170% Strike damage.</li>
+            </ul>
+            <p>
+                <StrikeDamageInfo />
+            </p>
+        </div>
+    },    
 ]
 
 const WeaponInfo = props => {

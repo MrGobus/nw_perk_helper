@@ -123,7 +123,26 @@ const perk_info = [
                 <StrikeDamageInfo />
             </p>
         </div>
-    },    
+    },
+    {
+        name: "bow",
+        body: <div>
+            <Typography variant="h3"component="div" sx = {{ mb: 2, mt: 2}}>
+                Bow
+            </Typography>
+            <p>
+                A versatile ranged weapon than can rapidly fire arrows of be fully to achieve maximum damage. Great for maintaining distance while utilizing a variety of attacks to hinder and damage enemies.
+            </p>
+            <ul>
+                <li>Shot Draw: Deals 100% Thrust damage.</li>
+                <li>Long Draw: Deals 170% Thrust damage.</li>
+            </ul>
+            <p>
+                <ThrustDamageInfo />
+            </p>
+        </div>
+    },
+    
 ]
 
 const WeaponInfo = props => {

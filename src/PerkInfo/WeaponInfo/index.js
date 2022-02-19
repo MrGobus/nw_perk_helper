@@ -67,6 +67,25 @@ const perk_info = [
             </p>
         </div>
     },
+    {
+        name: "spear",
+        body: <div>
+            <Typography variant="h3"component="div" sx = {{ mb: 2, mt: 2}}>
+                Spear
+            </Typography>
+            <p>
+                A melee weapon that utilizes its long reach for aggressive thrusting attacks. Perfect for keeping targets at a distance, strategic positioning and apply persistent pressure to targets.
+            </p>
+            <ul>
+                <li>Light Attack: Deals 100% Thrust damage.</li>
+                <li>Heavy Attack: Deals 130% Thrust damage.</li>
+                <li>Charged Heavy Attack: Deals 165% Thrust damage.</li>
+            </ul>
+            <p>
+                <ThrustDamageInfo />
+            </p>
+        </div>
+    },    
 ]
 
 const WeaponInfo = props => {

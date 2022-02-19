@@ -183,7 +183,25 @@ const perk_info = [
             </p>
         </div>
     },
-        
+    {
+        name: "life staff",
+        body: <div>
+            <Typography variant="h3"component="div" sx = {{ mb: 2, mt: 2}}>
+                Life Staff
+            </Typography>
+            <p>
+                A magical staff that consumes Mana to apply the restorative power of Nature spells. Ideal for supporting allies in combat with powerful healing and buffing abilities.
+            </p>
+            <ul>
+                <li>Light Attacks: Deals 107% Nature damage.</li>
+                <li>Heavy Attacks: Deals 151% Nature damage.</li>
+            </ul>
+            <p>
+                <NatureDamageInfo />
+            </p>
+        </div>
+    },
+    
 ]
 
 const WeaponInfo = props => {

@@ -142,7 +142,24 @@ const perk_info = [
             </p>
         </div>
     },
-    
+    {
+        name: "musket",
+        body: <div>
+            <Typography variant="h3"component="div" sx = {{ mb: 2, mt: 2}}>
+                Musket
+            </Typography>
+            <p>
+                A ranged weapon that fires high-damage cartridges. Ideal for keeping targets at a distance and long-ranged combat with a high payoff for precise aim.
+            </p>
+            <ul>
+                <li>Standard Attack: Deals 100% Thrust damage.</li>
+            </ul>
+            <p>
+                <ThrustDamageInfo />
+            </p>
+        </div>
+    },
+        
 ]
 
 const WeaponInfo = props => {

@@ -201,7 +201,24 @@ const perk_info = [
             </p>
         </div>
     },
-    
+    {
+        name: "ice gauntlet",
+        body: <div>
+            <Typography variant="h3"component="div" sx = {{ mb: 2, mt: 2}}>
+                Ice Gauntlet
+            </Typography>
+            <p>
+                Gauntlet that consumes Mana to summon the freezing powers of Ice spells. Great for dealing persistent damage by calling upon elemental storms, summoning ice, and utilizing freezing attacks that hinder and damage enemies.
+            </p>
+            <ul>
+                <li>Light Attacks: Deals 100% Ice damage.</li>
+                <li>Heavy Attacks: Deals 140% Ice damage.</li>
+            </ul>
+            <p>
+                <IceDamageInfo />
+            </p>
+        </div>
+    },
 ]
 
 const WeaponInfo = props => {

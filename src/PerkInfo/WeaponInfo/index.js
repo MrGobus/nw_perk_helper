@@ -5,6 +5,12 @@ import {
 const SlashDamageInfo = props => <inline>Slash attacks: Angry Earth +20%, Ancient -15%</inline>
 const ThrustDamageInfo = props => <inline>Thrust attacks: Corrupted +20%, Beasts +20%, Angry Earth -15%, Lost -15%</inline>
 const StrikeDamageInfo = props => <inline>Strike attacks: Lost +10%, Ancient +20%, Corrupted -15% </inline>
+const FireDamageInfo = props => <inline>Fire attacks: Angry Earth +30%, Ancient -40%</inline>
+const NatureDamageInfo = props => <inline>Nature attacks: Corrupted +15%, Lost +30%</inline>
+const IceDamageInfo = props => <inline>Ice attacks: Lost +15%, Corrupted -40%</inline>
+const VoidDamageInfo = props => <inline>Void attacks: Ancient +15%, Corrupted -40%, Lost -40%</inline>
+const ArcaneDamageInfo = props => <inline>Arcane attacks:  </inline>
+const LightningDamageInfo = props => <inline>Lightning attacks:  </inline>
 
 const perk_info = [
     {
@@ -156,6 +162,24 @@ const perk_info = [
             </ul>
             <p>
                 <ThrustDamageInfo />
+            </p>
+        </div>
+    },
+    {
+        name: "fire staff",
+        body: <div>
+            <Typography variant="h3"component="div" sx = {{ mb: 2, mt: 2}}>
+                Fire Staff
+            </Typography>
+            <p>
+                The magical staff that consumes Mana to ignite the blazing power of Fire spells. Excels at area denial, dealing fire damage over large swaths, and burning targets.
+            </p>
+            <ul>
+                <li>Light Attacks: Deals 100% Fire damage.</li>
+                <li>Heavy Attacks: Deals 140% Fire damage.</li>
+            </ul>
+            <p>
+                <FireDamageInfo />
             </p>
         </div>
     },
